@@ -1,0 +1,124 @@
+@multiple:3;
+body {
+    margin: 0;
+    padding: 0;
+    background: #ddd url(greyfloral.png) repeat;
+}
+ul{padding:0;margin:0;}
+#clock {
+    position: relative;
+    width: 120px * @multiple;
+    height: 120px * @multiple;
+    background: #fff url(face.gif) no-repeat center;
+    background-size:110px * @multiple 110px * @multiple;
+    margin: 20px * @multiple auto 0;
+    /*border: 1px * @multiple solid #333;*/
+    box-shadow: 1px 1px 5px * @multiple #999;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#clock .centerDial:before {
+  content:'';
+  width:12px * @multiple;
+  height:12px * @multiple;
+  border-radius:12px * @multiple;
+  position:absolute;
+  top:50%; left:50%;
+  margin:-8px * @multiple 0 0 -7.5px * @multiple;
+      border:2px * @multiple solid red;
+  background:#444;
+}
+
+.hands {
+    background: #444;
+    position: absolute;
+    left: 50%;
+    -webkit-animation: rotate 60s infinite linear;
+    -webkit-transform-origin: left bottom;
+    -moz-animation: rotate 60s infinite linear;
+    -moz-transform-origin: left bottom;
+    -ms-animation: rotate 60s infinite linear;
+    -ms-transform-origin: left bottom;
+    -o-animation: rotate 60s infinite linear;
+    -o-transform-origin: left bottom;
+    animation: rotate 60s infinite linear;
+    transform-origin: left bottom;
+}
+
+.hands.second {
+    height: 50px * @multiple;
+    width: 1px * @multiple;
+    top: 10px * @multiple;
+}
+
+.hands.minute{
+    height: 40px * @multiple;
+    width: 2px * @multiple;
+    top: 20px * @multiple;
+    -webkit-animation: rotatemin 60s infinite linear;
+    -moz-animation: rotatemin 60s infinite linear;
+    .animation-duration(3600s);
+}
+
+.hands.hour{
+    height: 30px * @multiple;
+    width: 3px * @multiple;
+    top: 30px * @multiple;
+    -webkit-animation: rotatehour 60s infinite linear;
+    -moz-animation: rotatehour 60s infinite linear;
+    .animation-duration(84600s);
+}
+.animation-duration(@duration){
+    -webkit-animation-duration: @duration;
+    -moz-animation-duration: @duration;
+    -ms-animation-duration: @duration;
+    -o-animation-duration: @duration;
+    animation-duration: @duration;
+}
+
+@-webkit-keyframes rotate {
+    0% { -webkit-transform: rotate(0deg);}
+    100% { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+    0% { -moz-transform: rotate(0deg);}
+    100% { -moz-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotatehour {
+    0% { -webkit-transform: rotate(-60deg);}
+    100% { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotatehour {
+    0% { -moz-transform: rotate(-60deg);}
+    100% { -moz-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotatemin {
+    0% { -webkit-transform: rotate(60deg);}
+    100% { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes rotatemin {
+    0% { -moz-transform: rotate(60deg);}
+    100% { -moz-transform: rotate(360deg);}
+}
+
+@-ms-keyframes rotate {
+    0% { -ms-transform: rotate(0deg);}
+    100% { -ms-transform: rotate(360deg);}
+}
+
+@-o-keyframes rotate {
+    0% { -o-transform: rotate(0deg);}
+    100% { -o-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
